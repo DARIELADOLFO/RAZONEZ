@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Para Gaudy ❤️</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#07152d;--pink:#ff5d9d;--pink2:#ff9ac7;--blue:#72a7ff;--green:#48a66f}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 50% 10%,#173b70 0,#0b1e3d 38%,#050d20 100%);color:#fff;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.12;pointer-events:none}
+.wrap{width:min(920px,94%);margin:auto;padding:28px 0 40px}
+header{text-align:center}
+.badge{display:inline-block;padding:8px 14px;border-radius:99px;background:#ffffff12;border:1px solid #ffffff20;font-size:12px;letter-spacing:2px}
+h1{font-size:clamp(36px,8vw,68px);margin:18px 0 8px;letter-spacing:-2px}
+h1 span{background:linear-gradient(90deg,#fff,#ff9dc9,#83b3ff);color:transparent;background-clip:text}
+header p{max-width:650px;margin:auto;color:#c7d5ec;line-height:1.6}
+.card{margin-top:24px;border:1px solid #ffffff18;background:#ffffff0d;border-radius:28px;overflow:hidden;box-shadow:0 25px 70px #0007}
+.bar{height:5px;background:#ffffff12}.bar>i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--blue),var(--pink));transition:width .6s}
+.grid{display:grid;grid-template-columns:1fr 1.1fr;gap:18px;padding:20px}
+.reason{min-height:330px;border-radius:22px;background:#020b1d66;border:1px solid #ffffff10;padding:25px;display:flex;flex-direction:column;justify-content:center}
+.kicker{text-transform:uppercase;letter-spacing:2px;color:#9fc1ff;font-size:12px;font-weight:bold}
+#reason{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:14px 0 10px}
+#sub{color:#b9c8df;line-height:1.6}
+#counter{margin-top:auto;color:#8096b8;font-size:13px}
+.garden{height:430px;position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(#0e2a54aa,#030c1f);border:1px solid #ffffff10}
+.garden-inner{position:absolute;top:0;left:0;width:100%;height:430px;transform-origin:top center}
+.moon{position:absolute;right:25px;top:22px;width:45px;height:45px;border-radius:50%;background:#fff5ce;box-shadow:0 0 30px #fff1a044}
+.moon:after{content:"";position:absolute;width:45px;height:45px;border-radius:50%;background:#102b55;left:13px;top:-5px}
+.pot{position:absolute;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:150px;height:105px;border-radius:0 0 42px 42px;background:linear-gradient(100deg,#a82f62,#f06e9d,#9c285b);box-shadow:inset 0 9px 15px #fff3,0 -4px 20px #0003}
+.pot:before{content:"";position:absolute;left:-12px;right:-12px;top:-14px;height:28px;border-radius:15px;background:linear-gradient(90deg,#8f2857,#ff82b0,#a62b60)}
+.pot span{position:absolute;bottom:17px;left:0;right:0;text-align:center;font-size:10px;font-weight:bold;letter-spacing:1.5px;color:#ffe8f1}
+.soil{position:absolute;z-index:4;bottom:85px;left:50%;transform:translateX(-50%);width:175px;height:42px;border-radius:50%;background:#633a2d}
+.plant{position:absolute;z-index:6;left:50%;bottom:100px;width:250px;height:290px;transform:translateX(-50%)}
+.stem{position:absolute;z-index:1;bottom:0;left:50%;width:9px;height:0;transform:translateX(-50%);border-radius:9px;background:linear-gradient(90deg,#236c49,#78d49b,#236c49);transition:height .8s}
+.leaf{position:absolute;z-index:2;width:64px;height:28px;background:linear-gradient(135deg,#6bd79a,#247b50);border-radius:100% 0 100% 0;opacity:0;transition:.6s;filter:drop-shadow(0 5px 5px #0004)}
+.l1{left:25px;bottom:60px}.l2{right:22px;bottom:105px;transform:rotate(10deg)}.l3{left:20px;bottom:150px;transform:rotate(-10deg)}.l4{right:18px;bottom:198px;transform:rotate(8deg)}.l5{left:42px;bottom:238px;transform:rotate(-8deg)}
+.leaf.on{opacity:1}
+.roots{position:absolute;z-index:1;left:50%;bottom:79px;width:170px;height:90px;transform:translateX(-50%)}
+.root{position:absolute;left:50%;bottom:0;width:4px;height:0;background:#9c6349;border-radius:5px;transform-origin:bottom;transition:.7s}
+.r1{transform:rotate(28deg)}.r2{transform:rotate(-28deg)}.r3{transform:rotate(12deg)}.r4{transform:rotate(-12deg)}
+.root.on{height:70px}
+.flower{position:absolute;z-index:8;left:50%;top:-10px;width:145px;height:145px;transform:translateX(-50%) scale(0);transition:transform .8s cubic-bezier(.2,.9,.2,1),filter .8s;filter:drop-shadow(0 8px 25px #ff4c9a66)}
+.flower.on{filter:drop-shadow(0 10px 38px #ff4c9aaa)}
+.petal{position:absolute;left:50%;top:50%;width:64px;height:88px;border-radius:55% 55% 45% 45%;transform-origin:50% 80%;background:linear-gradient(145deg,#ffb8d5,#ff4e99 52%,#a91e62);box-shadow:inset 4px 5px 10px #fff4,inset -5px -7px 10px #69083a22}
+.p1{transform:translate(-50%,-80%) rotate(0deg)}.p2{transform:translate(-50%,-80%) rotate(72deg)}.p3{transform:translate(-50%,-80%) rotate(144deg)}.p4{transform:translate(-50%,-80%) rotate(216deg)}.p5{transform:translate(-50%,-80%) rotate(288deg)}
+.center{position:absolute;left:50%;top:50%;width:42px;height:42px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#ffd86a 0 17%,#d96a36 18% 55%,#8f2c50 56%)}
+.action{text-align:center;padding:0 20px 28px}
+button{border:0;color:#fff;font-size:16px;font-weight:800;padding:16px 28px;border-radius:99px;background:linear-gradient(100deg,#d82f78,#ff6ca9,#4b87ff);box-shadow:0 14px 35px #d82f7844;cursor:pointer;touch-action:manipulation}
+button:active{transform:scale(.97)}
+.hint{font-size:12px;color:#8ea5c8;margin:12px 0 0}
+.modal{position:fixed;z-index:99;inset:0;background:#020817cc;backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;visibility:hidden;transition:.3s}
+.modal.open{opacity:1;visibility:visible}
+.letter{max-width:600px;background:#fff8fb;color:#282538;border-radius:28px;padding:30px 25px;text-align:center;box-shadow:0 30px 90px #0008;transform:translateY(15px);transition:.35s}
+.modal.open .letter{transform:none}
+.close{position:absolute;right:18px;top:15px;padding:8px 13px;background:#0000000d;color:#444;box-shadow:none}
+.letter h2{color:#aa2b62;font-size:32px}.letter p{font-family:Georgia,serif;font-size:18px;line-height:1.7}.verse{font-family:Arial!important;color:#9c4770;font-size:13px!important}
+.footer{text-align:center;color:#7489aa;font-size:12px;margin-top:15px}
+@media(max-width:720px){
+.wrap{padding:14px 0 18px}
+header p{display:none}
+.badge{padding:5px 10px;font-size:10px}
+h1{margin:10px 0 6px}
+.card{margin-top:14px;border-radius:20px}
+.grid{grid-template-columns:1fr;gap:10px;padding:12px}
+.reason{min-height:0;padding:14px 16px;border-radius:16px}
+.kicker{font-size:10px}
+#reason{font-size:clamp(18px,5.5vw,24px);margin:6px 0 4px}
+#sub{font-size:13px;line-height:1.4}
+#counter{font-size:11px;margin-top:8px}
+.garden{height:200px;border-radius:16px}
+.garden-inner{transform:scale(.465)}
+.action{padding:0 16px 16px}
+button{padding:12px 22px;font-size:14px}
+.hint{font-size:11px;margin:8px 0 0}
+.footer{margin-top:8px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="badge">UNA PEQUEÑA HISTORIA DE AMOR ✦</div>
+<h1>Para <span>Gaudy</span> ❤️</h1>
+<p>Hice este pequeño jardín para recordarte que <strong>mi amor por ti también se cultiva</strong>. Cada vez que presiones el botón, una nueva razón hará crecer nuestra flor.</p>
+</header>
+
+<section class="card">
+<div class="bar"><i id="progress"></i></div>
+<div class="grid">
+<section class="reason">
+<div class="kicker">Razón <span id="num">1</span> de <span id="total">10</span></div>
+<div id="reason">Porque contigo puedo ser yo mismo.</div>
+<div id="sub">No tengo que aparentar nada cuando estoy contigo.</div>
+<div id="counter">Nuestra historia apenas comienza...</div>
+</section>
+
+<section class="garden">
+<div class="garden-inner">
+<div class="moon"></div>
+<div class="plant">
+<div class="stem" id="stem"></div>
+<div class="flower" id="flower">
+<div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div><div class="petal p4"></div><div class="petal p5"></div>
+<div class="center"></div>
+</div>
+<div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="leaf l4"></div><div class="leaf l5"></div>
+</div>
+<div class="roots"><div class="root r1"></div><div class="root r2"></div><div class="root r3"></div><div class="root r4"></div></div>
+<div class="soil"></div>
+<div class="pot"><span>PARA GAUDY ♡</span></div>
+</div>
+</section>
+</div>
+
+<div class="action">
+<button type="button" id="water">💧 Regar con amor</button>
+<p class="hint" id="hint">Toca el botón para descubrir la primera razón.</p>
+</div>
+</section>
+<div class="footer">Hecho con amor y código por Dariel.</div>
+</div>
+
+<div class="modal" id="modal">
+<div class="letter">
+<button class="close" id="close" type="button">×</button>
+<div style="font-size:42px">🌹</div>
+<h2>Para ti, Gaudy</h2>
+<p>Después de todas estas razones, hay una que está por encima de todas: <strong>te amo y te elijo.</strong></p>
+<p>Quiero seguir construyendo contigo, cuidándonos, creciendo y encontrando nuevas razones para amarnos incluso en los días normales.</p>
+<p>La Biblia nos enseña que el amor es paciente, bondadoso, perseverante y que <strong>permanece</strong>. Ese es el amor que quiero cultivar contigo: uno que no solamente se dice, sino que se demuestra cada día.</p>
+<p class="verse"><strong>1 Corintios 13:4–7</strong> · Inspirado en el pasaje bíblico sobre el amor.</p>
+<div style="color:#8b7180;font-size:13px;margin-top:18px">Mi flor favorita siempre será la que crezca a tu lado. ❤️</div>
+</div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var reasons=[
+["Porque contigo puedo ser yo mismo.","No tengo que aparentar nada cuando estoy contigo."],
+["Porque haces que mi hogar se sienta más bonito.","No es solo el lugar; es la paz que siento cuando estamos juntos."],
+["Porque admiro la mujer que eres.","Tu forma de pensar, crear, luchar y seguir adelante me inspira."],
+["Porque me haces reír.","Contigo hasta un momento sencillo puede convertirse en un recuerdo bonito."],
+["Porque eres auténtica.","Amo esa forma tuya de ser tú, sin necesidad de parecerte a nadie."],
+["Porque creces conmigo.","Me emociona pensar en todo lo que todavía nos queda por construir."],
+["Porque haces especiales los pequeños momentos.","Una conversación, una mirada o simplemente estar juntos."],
+["Porque me inspiras a ser mejor.","Contigo quiero seguir aprendiendo y dando mi mejor versión."],
+["Porque amo nuestra historia.","Todo lo que hemos vivido forma parte de algo que quiero seguir cuidando."],
+["Porque eres tú.","Después de todas las razones, esta es la más sencilla y la más grande."]
+];
+
+var step=0;
+var total=reasons.length;
+var btn=document.getElementById("water");
+var reason=document.getElementById("reason");
+var sub=document.getElementById("sub");
+var num=document.getElementById("num");
+var totalEl=document.getElementById("total");
+var counter=document.getElementById("counter");
+var progress=document.getElementById("progress");
+var stem=document.getElementById("stem");
+var flower=document.getElementById("flower");
+var hint=document.getElementById("hint");
+var modal=document.getElementById("modal");
+var close=document.getElementById("close");
+var leaves=document.querySelectorAll(".leaf");
+var roots=document.querySelectorAll(".root");
+
+totalEl.textContent=total;
+
+function updatePlant(n){
+  var heights=[0,42,72,102,135,165,195,225,255,275,290];
+  stem.style.height=heights[n]+"px";
+
+  for(var i=0;i<leaves.length;i++){
+    if(n>=i+2) leaves[i].classList.add("on");
+    else leaves[i].classList.remove("on");
+  }
+
+  for(var j=0;j<roots.length;j++){
+    if(n>=j+1) roots[j].classList.add("on");
+    else roots[j].classList.remove("on");
+  }
+
+  var flowerScale=Math.min(1,n/total);
+  flower.style.transform="translateX(-50%) scale("+flowerScale+")";
+  if(n>=total) flower.classList.add("on");
+  else flower.classList.remove("on");
+}
+
+function render(){
+  if(step<total){
+    reason.textContent=reasons[step][0];
+    sub.textContent=reasons[step][1];
+    num.textContent=step+1;
+    counter.textContent=step===0?"Nuestra historia apenas comienza...":step+" razón"+(step===1?"":"es")+" ya echó raíz.";
+    progress.style.width=((step/total)*100)+"%";
+    updatePlant(step);
+    btn.textContent="💧 Regar con amor";
+    hint.textContent="Toca el botón para descubrir otra razón.";
+  }else{
+    reason.textContent="Mira lo que hiciste crecer. 🌹";
+    sub.textContent="Cada razón puso una raíz. Todas juntas formaron nuestra flor.";
+    num.textContent=total;
+    counter.textContent="Y todavía me quedan muchas razones para amarte.";
+    progress.style.width="100%";
+    updatePlant(total);
+    btn.textContent="🌹 Ver la flor de mi amor";
+    hint.textContent="La flor está completa. Presiona una última vez.";
+  }
+}
+
+btn.addEventListener("click",function(){
+  if(step<total){
+    step++;
+    render();
+  }else{
+    modal.classList.add("open");
+  }
+});
+
+close.addEventListener("click",function(){modal.classList.remove("open")});
+modal.addEventListener("click",function(e){if(e.target===modal) modal.classList.remove("open")});
+document.addEventListener("keydown",function(e){if(e.key==="Escape") modal.classList.remove("open")});
+
+render();
+})();
+</script>
+</body>
+</html>
